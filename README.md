@@ -29,54 +29,48 @@ This is a simple Lumen API for managing data related to provinces (`provinsi`) a
 3. Create a .env file and configure your database connection:
    ```bash
    cp .env.example .env
-Running the Application
-To run the Lumen application, execute the following command:
-
-bash
-Salin kode
-php -S localhost:8000 -t public
-Now, you can access the API at http://localhost:8000.
-
-Database Migration and Seeding
-To create the necessary tables and seed the database with initial data, run:
-
-bash
-Salin kode
-php artisan migrate --seed
-This command will create the provinsi and ktp tables and populate them with sample data.
-
-API Endpoints
-Get All Provinces
-URL: /api/provinsi
+5. Set your database connection details in the .env file.
+   ```bash
+7. To run the Lumen application, execute the following command:
+   ```bash
+   php -S localhost:8000 -t public
+9. To create the necessary tables and seed the database with initial data, run:
+    ```bash
+    php artisan migrate --seed
+    
+Get All KTP
+URL: /api/ktp
 Method: GET
-Response: Returns a list of all provinces.
+Response: Returns a list of all KTP records.. 
+
 Store Province
 URL: /api/provinsi
 Method: POST
 Request Body:
-json
-Salin kode
+```bash
 {
     "nama_prop": "New Province",
     "jumlah_penduduk": 1000000
 }
-Response: Returns the created province object.
+```
+
 Get All KTP
 URL: /api/ktp
 Method: GET
 Response: Returns a list of all KTP records.
+
 Store KTP
 URL: /api/ktp
 Method: POST
 Request Body:
-json
-Salin kode
+```
 {
     "Id_prop": 1,
     "nik": "1234567890123456",
     "nama": "John Doe"
 }
-Response: Returns the created KTP object.
+```
+
 Get KTP by NIK
 URL: /api/ktp/{nik}
 Method: GET
